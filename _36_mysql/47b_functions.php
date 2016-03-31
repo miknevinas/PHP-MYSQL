@@ -38,4 +38,21 @@ function updateUser() {
         die("QUERY FAILED" . " " . mysqli_error($connection));
     }
 }
+
+//Delete
+function deleteUser() {
+    global $connection;
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $id = $_POST['id'];
+
+    $query = "DELETE FROM users "; 
+    $query .= "WHERE id = $id";
+
+    //making actual query here
+    $result = mysqli_query($connection, $query);
+    if(!$result) {
+        die("QUERY FAILED" . " " . mysqli_error($connection));
+    }
+}
 ?>
