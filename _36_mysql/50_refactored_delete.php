@@ -1,13 +1,13 @@
 <?php include "45b_db.php";?>
 <?php include "47b_functions.php";?>
-<?php updateUser(); ?>
+<?php deleteUser(); ?>
 
 <?php include "_includes/header.php" ?>
 <body>
     <div class="container">
         <div class="col-xs-6">
-            <h1 class="text-center">Update</h1>
-            <form action="49_refactored_update.php" method="post">
+            <h1 class="text-center">Delete</h1>
+            <form action="50_refactored_delete.php" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" name="username" class="form-control">
@@ -26,7 +26,7 @@
                     </select>
                 </div>
 
-                <input class="btn btn-primary" type="submit" name="submit" value="UPDATE">
+                <input class="btn btn-primary" type="submit" name="submit" value="DELETE">
             </form>
         </div>
     </div>
