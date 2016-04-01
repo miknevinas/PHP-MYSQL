@@ -12,6 +12,12 @@ function createUser() {
         //Sanitizing
         $username = mysqli_real_escape_string($connection, $username);
         $password = mysqli_real_escape_string($connection, $password);
+        
+        //Hashing
+        $hashFormat = '$2y$10$'; //hash 10 times
+        $salt = 'iusesomecrazystrings22'; //22 characters
+        $hashAndSalt = $hashFormat . $salt;
+        $password = crypt($password, $hashAndSalt);
 
         //Connect to database
         //localhost, username, password, database name
