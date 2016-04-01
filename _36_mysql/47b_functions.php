@@ -8,6 +8,10 @@ function createUser() {
         global $connection;
         $username = $_POST['username'];
         $password = $_POST['password'];
+        
+        //Sanitizing
+        $username = mysqli_real_escape_string($connection, $username);
+        $password = mysqli_real_escape_string($connection, $password);
 
         //Connect to database
         //localhost, username, password, database name
